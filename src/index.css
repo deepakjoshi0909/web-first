@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px); /* Larger floating effect */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slow-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px); /* Even larger float */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 8s infinite ease-in-out; /* Slower and smoother floating */
+}
+
+.animate-slow-float {
+  animation: slow-float 15s infinite ease-in-out; /* Slow motion float */
+}
+
