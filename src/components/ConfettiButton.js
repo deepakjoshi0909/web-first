@@ -1,21 +1,38 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaTimesCircle } from "react-icons/fa";
+import axios from "axios";
 
 const ResponseButton = ({ triggerConfetti }) => {
   const [showResponsePrompt, setShowResponsePrompt] = useState(true);
   const [response, setResponse] = useState(null);
   const [isNoHovered, setIsNoHovered] = useState(false);
 
-  const handleYesClick = () => {
+  const handleYesClick = async () => {
     setResponse("Yes");
     setShowResponsePrompt(false);
     triggerConfetti(); // Trigger confetti in the Gallery
+
+    try {
+      await axios.post("http://localhost:5000/api/response", {
+        response: "Yes",
+      });
+    } catch (error) {
+      console.error("Error saving response:", error);
+    }
   };
 
-  const handleNoClick = () => {
+  const handleNoClick = async () => {
     setResponse("No");
     setShowResponsePrompt(false);
+
+    try {
+      await axios.post("http://localhost:5000/api/response", {
+        response: "No",
+      });
+    } catch (error) {
+      console.error("Error saving response:", error);
+    }
   };
 
   const handleNoHover = () => setIsNoHovered(true);

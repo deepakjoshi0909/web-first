@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const HeroSection = ({ scrollToGallery }) => {
   const [text, setText] = useState("");
-  const message = "Hey Crush, this is for you 💖";
+  const message = "Hey Riya, this is for you 💖";
 
   useEffect(() => {
     let index = 0;
