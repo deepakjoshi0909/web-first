@@ -14,7 +14,7 @@ const ResponseButton = ({ triggerConfetti }) => {
     triggerConfetti(); // Trigger confetti in the Gallery
 
     try {
-      await axios.post("http://localhost:5000/api/response", {
+      await axios.post("https://first-website-backend-1.onrender.com/api/response", {
         response: "Yes",
       });
     } catch (error) {
@@ -27,7 +27,7 @@ const ResponseButton = ({ triggerConfetti }) => {
     setShowResponsePrompt(false);
 
     try {
-      await axios.post("http://localhost:5000/api/response", {
+      await axios.post("https://first-website-backend-1.onrender.com/api/response", {
         response: "No",
       });
     } catch (error) {
